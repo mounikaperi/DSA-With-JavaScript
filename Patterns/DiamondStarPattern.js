@@ -32,7 +32,7 @@
  * 5      5     1     5
  *        i 2n-(2i+1) i
  */
-exports.printDiamondStarPattern = (n) => {
+exports.printDiamondStarPattern1 = (n) => {
   if (n >= 1 && n <= 20) {
     let diamondPatternString = "";
     for (let i = 0; i < n; i++) {
@@ -61,4 +61,45 @@ exports.printDiamondStarPattern = (n) => {
     }
     console.log(diamondPatternString);
   }
+}
+
+/**
+ *        *
+ *       * *
+ *      * * *
+ *     * * * *
+ *    * * * * *
+ *    * * * * *
+ *     * * * *
+ *      * * *
+ *       * *
+ *        *
+ * 
+ */
+// TODO: Needs revision
+exports.printDiamondStarPattern2 = (n) => {
+  let diamondString = "";
+  let space = n - 1;
+  for (let i=0; i<n; i++) {
+    for (let j=0; j<space; j++) {
+      diamondString += " ";
+    }
+    for (let j=0; j<=i; j++) {
+      diamondString += "* ";
+    }
+    diamondString += "\n";
+    space--;
+  }
+  space = 0;
+  for (let i=n; i>0; i--) {
+    for (let j=0; j<space; j++) {
+      diamondString += " ";
+    }
+    for (let j=0; j<i; j++) {
+      diamondString += "* ";
+    }
+    diamondString += "\n";
+    space++;
+  }
+  console.log(diamondString);
 }
