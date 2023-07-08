@@ -5,6 +5,8 @@ const rightAngledNumberPyramidPattern2 = require('../DSA/Patterns/RightAngledNum
 const invertedRightPyramid = require('../DSA/Patterns/InvertedRightPyramid');
 const invertedNumberedRightPyramid = require('../DSA/Patterns/InvertedNumberedRightPyramid');
 const starPyramid = require('../DSA/Patterns/StarPyramid');
+const invertedStarPattern = require('../DSA/Patterns/InvertedStarPattern');
+const diamondStarPattern = require('../DSA/Patterns/DiamondStarPattern');
 
 const express = require("express")
 const app = express()
@@ -25,5 +27,7 @@ app.listen(10000, function () {
   // rightAngledNumberPyramidPattern2.printRightAngledNumberPyramid2(5);
   // invertedRightPyramid.printInvertedRightPyramid(5);
   // invertedNumberedRightPyramid.printInvertedNumberedRightPyramid(5);
-  starPyramid.printStarPyramid(6);
+  // starPyramid.printStarPyramid(6);
+  // invertedStarPattern.printInvertedStarPattern(6);
+  diamondStarPattern.printDiamondStarPattern(6);
 });
