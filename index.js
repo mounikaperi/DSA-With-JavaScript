@@ -1,4 +1,4 @@
-const dsaPatterns = require('../DSA/handlers/patterns');
+const dsaPatterns = require('./handlers/patterns');
 
 const express = require("express")
 const app = express()

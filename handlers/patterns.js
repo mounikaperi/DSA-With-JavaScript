@@ -9,6 +9,7 @@ const invertedStarPattern = require('../Patterns/InvertedStarPattern');
 const diamondStarPattern = require('../Patterns/DiamondStarPattern');
 const halfDiamondPattern = require('../Patterns/HalfDiamondPattern');
 const binaryNumberPattern = require('../Patterns/BinaryNumberPattern');
+const numberCrownPattern = require('../Patterns/NumberCrownPattern');
 
 /**
  * Patterns:
@@ -30,4 +31,5 @@ exports.patterns = () => {
   diamondStarPattern.printDiamondStarPattern2(5);
   halfDiamondPattern.printHalfDiamondPattern(2);
   binaryNumberPattern.printBinaryNumberPattern(6);
+  numberCrownPattern.printNumberCrownPattern(6);
 };
