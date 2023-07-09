@@ -11,6 +11,7 @@ const halfDiamondPattern = require('../Patterns/HalfDiamondPattern');
 const binaryNumberPattern = require('../Patterns/BinaryNumberPattern');
 const numberCrownPattern = require('../Patterns/NumberCrownPattern');
 const increasingNumberTriangle = require('../Patterns/IncreasingNumberTriangle');
+const increasingletterTriangle = require('../Patterns/IncreasingLetterTrianglePattern');
 
 /**
  * Patterns:
@@ -34,4 +35,8 @@ exports.patterns = () => {
   binaryNumberPattern.printBinaryNumberPattern(6);
   numberCrownPattern.printNumberCrownPattern(6);
   increasingNumberTriangle.printIncreasingNumberTriangle(6);
+  increasingletterTriangle.printIncreasingLetterPattern(6);
+  increasingletterTriangle.printReverseletterPattern(6);
+  increasingletterTriangle.printAlphaRampPattern(6);
+  increasingletterTriangle.printAlphaHillPattern(6);
 };
