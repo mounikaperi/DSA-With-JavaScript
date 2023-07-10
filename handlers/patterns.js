@@ -39,4 +39,5 @@ exports.patterns = () => {
   increasingletterTriangle.printReverseletterPattern(6);
   increasingletterTriangle.printAlphaRampPattern(6);
   increasingletterTriangle.printAlphaHillPattern(6);
+  increasingletterTriangle.printAlphaTrianglePattern(6);
 };

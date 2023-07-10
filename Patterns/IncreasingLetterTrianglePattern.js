@@ -95,7 +95,7 @@ exports.printAlphaHillPattern = (n) => {
   let alphaPattern = "";
   for (let i=0; i<n; i++) {
     let breakpoint = (2*i+1)/2;
-    for (let j=n; j>i; j--) {
+    for (let j=0; j<n-i-1; j++) {
       alphaPattern += " ";
     }
     for (let j=1, index=0; j<=2*i+1; j++) {
@@ -103,8 +103,32 @@ exports.printAlphaHillPattern = (n) => {
       if (j <= breakpoint) index++;
       else index--;
     }
-    for (let j=n; j>1; j--) {
+    for (let j=0; j<n-i-1; j++) {
       alphaPattern += " ";
+    }
+    alphaPattern += "\n";
+  }
+  console.log(alphaPattern);
+}
+
+/**
+ * Pattern-18: Alpha-Triangle Pattern
+Problem Statement: Given an integer N, print the following pattern : 
+Input Format: N = 6
+Result:   
+F
+E F
+D E F
+C D E F
+B C D E F
+A B C D E F
+ */
+exports.printAlphaTrianglePattern = (n) => {
+  let alphaPattern = "";
+  for (let i=0; i<=n; i++) {
+    let alphaIndex = n - i;
+    for (let j=0; j<i; j++, alphaIndex++) {
+      alphaPattern += String.fromCharCode(alphaIndex + 65) + " ";
     }
     alphaPattern += "\n";
   }
