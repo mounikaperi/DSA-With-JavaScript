@@ -12,6 +12,7 @@ const binaryNumberPattern = require('../Patterns/BinaryNumberPattern');
 const numberCrownPattern = require('../Patterns/NumberCrownPattern');
 const increasingNumberTriangle = require('../Patterns/IncreasingNumberTriangle');
 const increasingletterTriangle = require('../Patterns/IncreasingLetterTrianglePattern');
+const symmetricVoidPattern = require('../Patterns/SymmetricVoidPattern');
 
 /**
  * Patterns:
@@ -40,4 +41,5 @@ exports.patterns = () => {
   increasingletterTriangle.printAlphaRampPattern(6);
   increasingletterTriangle.printAlphaHillPattern(6);
   increasingletterTriangle.printAlphaTrianglePattern(6);
+  symmetricVoidPattern.printSymmetricVoidPattern(6);
 };
