@@ -15,7 +15,7 @@ const increasingletterTriangle = require('../Patterns/IncreasingLetterTrianglePa
 const symmetricVoidPattern = require('../Patterns/SymmetricVoidPattern');
 const symmetricButterflyPattern = require('../Patterns/SymmetricButterflyPattern');
 const hollowRectanglePattern = require('../Patterns/HollowRectanglePattern');
-
+const numberPattern = require('../Patterns/NumberPattern');
 /**
  * Patterns:
  * For outer loop - count the number of lines
@@ -46,4 +46,5 @@ exports.patterns = () => {
   symmetricVoidPattern.printSymmetricVoidPattern(6);
   symmetricButterflyPattern.printSymmetricButterflyPattern(6);
   hollowRectanglePattern.printHollowRectanglePattern(6);
+  numberPattern.printNumberPattern(6);
 };
