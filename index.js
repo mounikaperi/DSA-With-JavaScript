@@ -7,6 +7,6 @@ app.get("/",function(request,response){
 response.send("Hello World!")
 })
 app.listen(10000, function () {
-  dsaPatterns.patterns();
+  // dsaPatterns.patterns();
   dsaArrays.arrays();
 });
