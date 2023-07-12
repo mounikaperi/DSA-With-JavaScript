@@ -36,9 +36,11 @@ Complexity:
   Space Complexity - O(1)
  */
 function findLargestElementViaBruteForce() {
-  const array = [2, 5, 1, 3, 0];
+  const array = [8, 10, 5, 7, 9];
+  console.log(`Input array: ${array}`);
   array.sort((a,b) => a - b);
-  console.log(array[array.length - 1]);
+  console.log(`Sorted array: ${array}`);
+  console.log(`Largest Element in Brute Force Approach: ${array[array.length - 1]}`);
 };
 function findLargestElementViaRecursiveApproach() {
   const array = [8, 10, 5, 7, 9];
@@ -48,10 +50,11 @@ function findLargestElementViaRecursiveApproach() {
       largestValue = currentValue;
     }
   }
-  console.log(largestValue);
+  console.log(`Largest Element in Recursive Approach: ${largestValue}`);
 };    
 exports.printLargestElementOfArray = () => {
   findLargestElementViaBruteForce();
   findLargestElementViaRecursiveApproach();
+  console.log();
 };
 
