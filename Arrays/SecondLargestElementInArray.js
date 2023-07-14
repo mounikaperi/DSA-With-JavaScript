@@ -110,7 +110,29 @@ function findViaBetterApproach() {
 }
 
 /**
- * If equivalent to largest donot do anything
+Intuition:
+  In the previous solution, even though we were able to bring down the time complexity to O(N), 
+  we still needed to do two traversals to find our answer. 
+  Can we do this in a single traversal by using smart comparisons on the go?
+Approach:
+  We would require four variables: smallest, secondSmallest, largest, and secondLargest.
+  Variable smallest and secondSmallest are initialized to Integer.MAX_VALUE (Java)
+  while largest and secondLargest are initialized to Integer.MIN_VALUE (Java)
+SecondSmallest Algorithm:
+  - If the current element is smaller than 'smallest' then update the secondSmallest to smallest
+    and smallest to currentValue
+  - Else if the current element is smaller than the secondSmallest and it isn;t equal to smallest 
+    then we update the secondSmallest 
+  - Once we traverse the entire array, we would find the second smallest element in secondSmallest
+SecondLargest Algorithm:
+  - If the current element is larger than 'largest' then update the secondLargest to largest and
+    largest to currentValue
+  - Else if the current value if larger than the secondlargest and it isn't equal to largest
+    then we update the secondLargest
+  - Once we traverse the entire array, we would find the secondLargest element
+Complexity Analysis:
+  Time Complexity: O(N), Single-pass solution
+  Space Complexity: O(1)
  */
 function findViaOptimalApproach() {
   const array = [1, 2, 1, 4, 7, 7, 5];
