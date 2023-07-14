@@ -41,7 +41,7 @@ function checkViaBruteForceApproach() {
     return true;
   for (let i = 0; i < array.length; i++) {
     for (let j = i + 1; j < array.length; j++) {
-      if (array[i] > array[j])
+      if (array[i] > array[j] && array[i] !== array[j])
         return false;
     }
   }
@@ -65,14 +65,14 @@ Complexity Analysis:
   Time Complexity: O(N)
   Space Complexity: O(1)
  */
- */
+
 function checkViaOptimalApproach() {
   const array = [11, 22, 33, 44, 55];
   console.log(`Input array is ${array}`);
   if (array.length === 0 || array.length === 1)
     return true;
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] > array[i + 1])
+  for (let i = 0; i < array.length - 1; i++) {
+    if (array[i] > array[i + 1] && array[i] !== array[i + 1])
       return false;
   }
   return true;
