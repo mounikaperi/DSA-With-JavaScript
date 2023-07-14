@@ -33,6 +33,12 @@ Approach:
   - Loop the array from left and check from second position if the element is not equivalent to smallest
     then that is the second smallest element
   - Print the second smallest and second largest value
+Complexity Analysis:
+  In worst case, the traversal happens whole array from N-1 to 0 and there might be a case where the second 
+  largest might not exist. 
+  So, first we sort and second we might traverse the entire array
+  Time Complexity: O(NlogN + N), For sorting the array
+  Space Complexity: O(1)
  */
 function findViaBruteForce() {
   const array = [1, 2, 1, 4, 7, 7, 5];
@@ -58,7 +64,43 @@ function findViaBruteForce() {
   console.log(`Second Smallest: ${secondSmallest}`);
   console.log(`Second Largest: ${secondLargest}`);
 }
+
+/**
+---------------------------------------------------------------------------------------------------
+Solution-2: Better Approach
+---------------------------------------------------------------------------------------------------
+Even though we want to have just the second smallest and largest elements, we are still sorting the entire array
+for that and thus increasing the time complexity. 
+Can we somehow try to not sort the array and still get our answer? 
+Approach:
+  - Find the smallest and largest element in the array in single traversal
+  - After this, we once again traverse the array and find an element that is just greater than the smallest
+    element we just found.
+  - Similarly, we would find the largest element which is just smaller than the largest element we found.
+    Indeed, this is our second smallest and second largest element
+*/
+function findViaBetterApproach() {
+  const array = [1, 2, 1, 4, 7, 7, 5];
+  console.log(`Input array: ${array}`);
+  let smallest=Infinity, largest=-Infinity, secondLargest=-Infinity, secondSmallest=Infinity;
+  for (let currentValue of array) {
+    largest = Math.max(largest, currentValue);
+    smallest = Math.min(smallest, currentValue);
+  }
+  for (let currentValue of array) {
+    if (currentValue > secondLargest && currentValue !== largest )
+      secondLargest = currentValue;
+    if (currentValue < secondSmallest && currentValue !== smallest) 
+      secondSmallest = currentValue;
+  }
+  console.log("Solution in Better Approach");
+  console.log(`Smallest: ${smallest}`);
+  console.log(`Largest: ${largest}`);
+  console.log(`Second Smallest: ${secondSmallest}`);
+  console.log(`Second Largest: ${secondLargest}`);
+}
 exports.printSecondSmallestNSecondLargest = () => {
   findViaBruteForce();
+  findViaBetterApproach();
   console.log();
 };
