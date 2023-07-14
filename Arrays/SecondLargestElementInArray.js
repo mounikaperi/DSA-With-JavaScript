@@ -43,6 +43,8 @@ Complexity Analysis:
 function findViaBruteForce() {
   const array = [1, 2, 1, 4, 7, 7, 5];
   console.log(`Input array: ${array}`);
+  if (array.length < 2)
+    return -1;
   array.sort((a, b) => a - b);
   console.log(`Sorted array: ${array}`);
   const largest = array[array.length - 1];
@@ -61,6 +63,8 @@ function findViaBruteForce() {
     }
   }
   console.log("Solution in BruteForce Approach");
+  console.log(`Smallest: ${smallest}`);
+  console.log(`Largest: ${largest}`);
   console.log(`Second Smallest: ${secondSmallest}`);
   console.log(`Second Largest: ${secondLargest}`);
 }
@@ -78,10 +82,15 @@ Approach:
     element we just found.
   - Similarly, we would find the largest element which is just smaller than the largest element we found.
     Indeed, this is our second smallest and second largest element
+Time Complexity:
+  Time Complexity: O(N + N) === O(N), We do two linear traversals in our array
+  Space Complexity: O(1)
 */
 function findViaBetterApproach() {
   const array = [1, 2, 1, 4, 7, 7, 5];
   console.log(`Input array: ${array}`);
+  if (array.length < 2)
+    return -1;
   let smallest=Infinity, largest=-Infinity, secondLargest=-Infinity, secondSmallest=Infinity;
   for (let currentValue of array) {
     largest = Math.max(largest, currentValue);
@@ -99,8 +108,44 @@ function findViaBetterApproach() {
   console.log(`Second Smallest: ${secondSmallest}`);
   console.log(`Second Largest: ${secondLargest}`);
 }
+
+/**
+ * If equivalent to largest donot do anything
+ */
+function findViaOptimalApproach() {
+  const array = [1, 2, 1, 4, 7, 7, 5];
+  console.log(`Input array: ${array}`);
+  if (array.length < 2)
+    return -1;
+  let largest = -Infinity, secondLargest = -Infinity, smallest = Infinity, secondSmallest = Infinity;
+  for (let i=0; i<array.length; i++) {
+    if (array[i] > largest) {
+      secondLargest = largest;
+      largest = array[i];
+    } else if (array[i] > secondLargest && array[i] !== largest) {
+      // if it is equivalent to largest do not do anything, largest shouldnot be changed
+      // but you should check the second largest, if it is greater then set it.
+      secondLargest = array[i];
+    } 
+  } 
+  for (let i=0; i<array.length; i++) {
+    if (array[i] < smallest) {
+      secondSmallest = smallest;
+      smallest = array[i];
+    } else if (array[i] < secondSmallest && array[i] !== smallest) {
+      secondSmallest = array[i];
+    }
+  }
+  console.log("Solution in Optimal Approach");
+  console.log(`Smallest: ${smallest}`);
+  console.log(`Largest: ${largest}`);
+  console.log(`Second Smallest: ${secondSmallest}`);
+  console.log(`Second Largest: ${secondLargest}`);
+}
+
 exports.printSecondSmallestNSecondLargest = () => {
   findViaBruteForce();
   findViaBetterApproach();
+  findViaOptimalApproach();
   console.log();
 };
