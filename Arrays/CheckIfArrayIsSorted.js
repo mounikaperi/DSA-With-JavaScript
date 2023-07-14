@@ -30,6 +30,9 @@ Approach:
   - If any of the picked elements is greater than its future elements then return false
   - If the size of the array is zero or one (N = 0 or N = 1) or the entire array is traversed successfully
     then we will simply return true
+Complexity Analysis:
+  Time Complexity: O(N^2)
+  Space Complexity: O(1)
  */
 function checkViaBruteForceApproach() {
   const array = [11, 22, 33, 44, 55];
@@ -44,6 +47,25 @@ function checkViaBruteForceApproach() {
   }
   return true;
 }
+
+/**
+----------------------------------------------------------------------------
+Solution-2: Optimal Approach
+---------------------------------------------------------------------------
+Approach:
+  - As we know that for a sorted array the previous of every element is smaller than or equal to its
+    current element.
+  - So, Through this, we can conclude that if the previous element is smaller than or equal to the
+    current element then. Then we can say that the two elements are sorted. If the condition is true for the entire array then the array is sorted.
+  - We will check every element with its previous element if the previous element is smaller than
+    or equal to the current element then we will move to the next index.
+  - If the whole array is traversed successfully or the size of the given array is zero or one
+    (i.e N = 0 or N = 1). Then we will return True else return False.
+Complexity Analysis:
+  Time Complexity: O(N)
+  Space Complexity: O(1)
+ */
+ */
 function checkViaOptimalApproach() {
   const array = [11, 22, 33, 44, 55];
   console.log(`Input array is ${array}`);
