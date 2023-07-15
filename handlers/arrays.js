@@ -3,6 +3,7 @@ const secondLargestElementOfArray = require('../Arrays/SecondLargestElementInArr
 const isArraySorted = require('../Arrays/CheckIfArrayIsSorted');
 const removeDuplicates = require('../Arrays/RemoveDuplicates');
 const leftRotateArrayByOne = require('../Arrays/LeftRotateByOne');
+const leftRotateArrayBydPlaces = require('../Arrays/LeftRotateByDPlaces');
 
 exports.arrays = () => {
   largestElementOfArray.printLargestElementOfArray();
@@ -10,4 +11,5 @@ exports.arrays = () => {
   isArraySorted.checkIfArrayIsSorted();
   removeDuplicates.printArrayAfterRemovingDuplicates();
   leftRotateArrayByOne.printRotatedArrayByOneToLeft();
+  leftRotateArrayBydPlaces.printRotatedArrayBydPlaces();
 };

@@ -20,7 +20,7 @@ the element at first index will be shifted to
 last index which is also by the way the first index.
 
 -----------------------------------------------------------------------------------
-Solution 1: Brute force Approach
+Solution : Optimal Approach
 -----------------------------------------------------------------------------------
 Intuition:
   The rotated array has just a difference that its first element is present at the last index of the array.
@@ -33,7 +33,8 @@ Complexity Analysis:
   Time Complexity: O(n), as we iterate through the array only once.
   Space Complexity: O(n) as we are using another array of size, same as the given array.
  */
-function rotateArrayByBruteForceApproach() {
+  
+exports.printRotatedArrayByOneToLeft = (n) => {
   const array = [1, 2, 3, 4, 5, 6];
   console.log(`Input Array: ${array}`);
   const temp = array[0];
@@ -42,9 +43,5 @@ function rotateArrayByBruteForceApproach() {
   }
   array[array.length-1] = temp;
   console.log(`Rotated Array: ${array}`);
-}
-
-exports.printRotatedArrayByOneToLeft = (n) => {
-  rotateArrayByBruteForceApproach();
   console.log();
 }
