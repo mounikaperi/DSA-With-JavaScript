@@ -50,6 +50,11 @@ Assume the given array is {1,2,3,4,5,6,7} and d = 3.
 Given Array: [1, 2, 3, 4, 5, 6, 7]
 Rotated Array: [4, 5, 6, 7, 1, 2, 3]
 temp: [1, 2, 3]
+
+Complexity Analysis:
+  Time Complexity: O(d) + O(n-d) + O(d) = O(n+d)
+  where n = size of the array, d = the number of rotations. Each term represents each loop used in the code.
+  Space Complexity: O(d) extra space as we are using a temporary array of size d.
 */
 
 function rotateArrayBydPlacesViaBruteForce(array, d) {
@@ -68,8 +73,42 @@ function rotateArrayBydPlacesViaBruteForce(array, d) {
   console.log(`Rotated array by ${d} number of places is ${array}`);
 }
 
+/**
+-------------------------------------------------------------------------------------------------------
+Solution -2 : Optimized Approach(without using any extra space): Using “Reversal Algorithm”
+------------------------------------------------------------------------------------------------------- 
+This is a straightforward method. The steps are as follows:
+
+Step 1: Reverse the subarray with the first d elements (reverse(arr, arr+d)).
+Step 2: Reverse the subarray with the last (n-d) elements (reverse(arr+d, arr+n)).
+Step 3: Finally reverse the whole array (reverse(arr, arr+n)).
+*/
+function reverse(array, start, end){
+  while (start <= end) {
+    let temp = array[start];
+    array[start] = array[end];
+    array[end] = temp;
+    start ++;
+    end --;
+  }
+}
+
+function rotateArrayBydPlacesViaReversalAlgo(array, d){
+  console.log(`Input array is ${array} and number of rotations to be done is ${d}`);
+  let n = array.length;
+  d = d%n;
+  if (n === 0) return;
+  reverse(array, 0, d-1);
+  reverse(array, d, n-1);
+  reverse(array, 0, n-1);
+  console.log(`Rotated array by ${d} number of places is ${array}`);
+}
+
 exports.printRotatedArrayBydPlaces = () => {
-  const array = [1, 2, 3, 4, 5, 6, 7];
+  let array = [1, 2, 3, 4, 5, 6, 7];
   const d = 3;
   rotateArrayBydPlacesViaBruteForce(array, d);
+  array = [1, 2, 3, 4, 5, 6, 7];
+  rotateArrayBydPlacesViaReversalAlgo(array, d);
+  console.log();
 }
