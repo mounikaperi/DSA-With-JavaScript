@@ -82,6 +82,11 @@ This is a straightforward method. The steps are as follows:
 Step 1: Reverse the subarray with the first d elements (reverse(arr, arr+d)).
 Step 2: Reverse the subarray with the last (n-d) elements (reverse(arr+d, arr+n)).
 Step 3: Finally reverse the whole array (reverse(arr, arr+n)).
+
+Complexity Analysis:
+  Time Complexity: O(d)+O(n-d)+O(n) = O(2*n), where n = size of the array, d = the number of rotations. 
+  Each term corresponds to each reversal step.
+  Space Complexity: O(1) since no extra space is required.
 */
 function reverse(array, start, end){
   while (start <= end) {
