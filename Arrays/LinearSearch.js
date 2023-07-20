@@ -25,6 +25,7 @@ exports.printIfElementIsFound = () => {
   for (let i=0; i<array.length; i++) {
     if(array[i] === num) {
       console.log(`The element ${num} is found in ${i}th index`);
+      console.log();
       return i;
     }
   }
