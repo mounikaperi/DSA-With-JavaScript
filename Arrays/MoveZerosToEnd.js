@@ -114,4 +114,5 @@ function prepareArrayViaOptimalApproach() {
 exports.printArrayWithAllZerosAtEnd = () => {
   prepareArrayViaBruteForce();
   prepareArrayViaOptimalApproach();
+  console.log();
 }

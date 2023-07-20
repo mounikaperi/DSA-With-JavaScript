@@ -5,6 +5,7 @@ const removeDuplicates = require('../Arrays/RemoveDuplicates');
 const leftRotateArrayByOne = require('../Arrays/LeftRotateByOne');
 const leftRotateArrayBydPlaces = require('../Arrays/LeftRotateByDPlaces');
 const moveZerosToEndInArray = require('../Arrays/MoveZerosToEnd');
+const linearSearch = require('../Arrays/LinearSearch');
 
 exports.arrays = () => {
   largestElementOfArray.printLargestElementOfArray();
@@ -14,4 +15,5 @@ exports.arrays = () => {
   leftRotateArrayByOne.printRotatedArrayByOneToLeft();
   leftRotateArrayBydPlaces.printRotatedArrayBydPlaces();
   moveZerosToEndInArray.printArrayWithAllZerosAtEnd();
+  linearSearch.printIfElementIsFound();
 };
